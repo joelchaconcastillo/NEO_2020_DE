@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{amssymb, amsmath}
+
+
+\newcommand{\DE}{{\sc de}}
+\newcommand{\DEEDM}{{\sc de-edm}}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Do NOT modify the dimensions of the page
+\setlength{\topmargin}{-0.3in}
+\setlength{\textheight}{9.9in}
+\setlength{\oddsidemargin}{-0.5in}
+\setlength{\textwidth}{7.5in}
+% Do NOT modify the dimensions of the page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% No paragraph indent or paragraph skip
+\parindent=0pt \parskip=0pt
+
+
+
+\begin{document}
+
+\centerline{\bf A Sensibility Analsys of Differential Evolution with Enhanced Diversity Maintenance}
+
+\vspace{12pt}
+
+\centerline{{\bf Joel Chac\'on Castillo$^{\rm a}$},  {\bf Carlos Segura$^{\rm b}$}}
+
+\vspace{12pt}
+
+\centerline{$^{\rm a}$Computer Science Department}
+\centerline{Center for Research in Mathematics (CIMAT)}
+\centerline{Guanajuato, M\'exico}
+\centerline{joelchaconcastillo@gmail.com}
+
+\vspace{12pt}
+
+\centerline{$^{\rm b}$Computer Science Department}
+\centerline{Center for Research in Mathematics (CIMAT)}
+\centerline{Guanajuato, M\'exico}
+\centerline{carlos.segura@cimat.mx}
+
+\vspace{12pt}
+\vspace{12pt}
+
+Differential Evolution (\DE{}) is a popular population-based meta-heuristic that has been successfully used in complex 
+optimization problems.
+%
+Premature convergence is one of the most important drawbacks that affects its performance.
+%
+In this paper, a novel replacement strategy that combines the use of an elite population and a mechanism to preserve 
+diversity explicitly is devised.
+%
+The proposal is integrated with \DE{} to generate the \DE{} with Enhanced Diversity Maintenance (\DEEDM{}).
+%
+The main novelty is the use of a dynamic balance between exploration and exploitation to adapt the optimizer to the 
+requirements of the different optimization stages.
+%
+Experimental validation is carried out with several benchmark tests proposed in competitions of the well-known IEEE Congress on 
+Evolutionary Computation.
+%
+Top-rank algorithms of each competition, as well as other diversity-based schemes, 
+are used to illustrate the usefulness of the proposal.
+%
+The new method avoids premature convergence and significantly improves further the results obtained by state-of-the-art algorithms.
+
+
+
+
+% \bibliographystyle{plain}
+% \begin{thebibliography}{1}
+% 
+% \bibitem{first}
+% T.~Haynes.
+% \newblock Collective adaptation: The exchange of coding segments.
+% \newblock {\em Evol. Comput.}, 6(4):311--338, Dec. 1998.
+
+%% \parindent=16pt
+%[1] A.~Perasso, and B.~Laroche, ``Well-posedness of an epidemiological problem described by an evolution PDE", {\it ESAIM: Proceedings\/}, E. CancÃ¨s, S. Faure, B. Graille, Editors, v.~25, p.~29-43, 2008.
+
+% \end{thebibliography}
+
+\end{document}
