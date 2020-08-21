@@ -32,7 +32,7 @@
 
 \begin{document}
 
-\centerline{\bf A Simplification of Differential Evolution with Enhanced Diversity Maintenance}
+\centerline{\bf A Variant of Differential Evolution with Enhanced Diversity Maintenance}
 
 \vspace{12pt}
 
@@ -55,69 +55,74 @@
 \vspace{12pt}
 \vspace{12pt}
 
-Evolutionary Algorithms (\EAS{}) are a population-based meta-heuristics widely used in complex optimization problems.
+Evolutionary Algorithms (\EAS{}) are population-based meta-heuristics widely used in complex optimization problems.
 %
-In spite of their remarkable performance, its behaviour can be seriously deteriorated by several reasons.
+In spite of their remarkable performance, its behavior can be seriously deteriorated by several reasons.
 %
-Premature convergence is one of the most important drawbacks that \EAS{} faces.
+Premature convergence is one of the most important drawbacks that \EAS{} face.
 %
-A way to alliviate this drawback dwells in the incorporation of managment techniques in which is aimed a balance between exploration and exploitation among the evolutionary search\footnote{Auto-tuning strategy for evolutionary algorithms: balancing between exploration and exploitation}.
+A way to alleviate this drawback dwells in the incorporation of diversity management techniques with the aim
+of attaining a proper balance between exploration and exploitation \footnote{Auto-tuning strategy for evolutionary algorithms: balancing between exploration and exploitation}.
 %
-Therefore, the theme of interest is driven to attain such balance.
+In 2013, {\v{C}}repin{\v{s}}ek et al.\footnote{Exploration and exploitation in evolutionary algorithms: A survey} proposed a quite 
+popular classification of these methods which depends on the sort of components modified in the \EA{}.
 %
-In 2013, {\v{C}}repin{\v{s}}ek et al.\footnote{Exploration and exploitation in evolutionary algorithms: A survey} proposed a quite popular classification of these methods which depends on the sort of components modified in the \EA{}.
-%
-A popular taxonomy identifies the following groups:
+This taxonomy identifies the following groups:
 %
 \textit{selection-based}, \textit{population-based}, \textit{crossover/mutation-based}, \textit{fitness-based}, and \textit{replacement-based}.
 %
-Some of the most successful methods designed to attain this balance yields in the \textit{replacement-based} operator.
+Some of the most successful methods designed in recent years to attain this balance yields in the \textit{replacement-based} group.
 %
-The basic principle that governs this replacement operator is the modification of the level of exploration in successive generations by controlling the diversity of the survivors.
+The basic principle that governs methods belonging to this group is the modification of the level of exploration in successive 
+generations by controlling the diversity of the survivors.
 %
 In this way, an adequate selection of diverse survivors might slow down the inconvenient of an accelerated convergence.
 %
-Recent reseach has shown that important advances are attained when the balance between exploration and intensification is managed by relating the amount of maintained population's diversity to the stopping criterion and elapsed period of execution.
+Recent research has shown that important advances are attained when the balance between exploration and intensification 
+is managed by relating the amount of maintained population's diversity to the stopping criterion and elapsed period of execution.
 %
 Particularly, these methods reduce the importance given to the preservation of diversity as the end of the optimization is approached.
 %
-This principle has been used to find a new best-known solutions for the Frequency Assignment Problem, and to the design of the winning strategy of the extended round of Google Hash Code 2020.
-%
-%
+This principle has been used to find new best-known solutions for the Frequency Assignment Problem, and to designing the winning 
+strategy of the extended round of Google Hash Code 2020.
 
-In the last year was proposed ``Differential Evolution with Enhanced Diversity Maintenance'' (\DEEDM{}), which incorporates a replacement phase to \DE{}.
+In 2019 the ``Differential Evolution with Enhanced Diversity Maintenance'' (\DEEDM{}) was proposed, 
+which incorporates a diversity-aware replacement phase to \DE{}.
 %
-In particular this algorithm explicitly preserves diversity in several stages among the execution.
+In particular this algorithm explicitly preserves diversity by altering a parameter dynamically.
 %
-Hence, a dynamic balance between exploration and exploitation is carried out with the aim of adapting the optimizer to the requirements of the different optimization stages.
+Hence, a dynamic balance between exploration and exploitation is attained with the aim of adapting the optimizer to 
+the requirements of the different optimization stages.
 %
-\DEEDM{} was validated with several test problems proposed in competitions of the well-known IEEE Congress on Evolutionary Computation (\CEC{}).
+\DEEDM{} was validated with several test problems proposed in competitions of the IEEE Congress on Evolutionary Computation (\CEC{}).
 %
-In such comparison, the top-rank algorithms of each competition (\CECA{} and \CECB{}), as well other diversity-based schemes were taken into account.
+In such a comparison, the top-ranked algorithms of each competition (\CECA{} and \CECB{}), as well other diversity-based schemes 
+were taken into account.
 %
 The results showed that \DEEDM{} avoided premature convergence which improved remarkably to state-of-the-art algorithms.
 %
+Although the benefits of explicitly promoting the diversity in \DE{} are quite evident, those kind of strategies require the 
+setting of two extra user-parameters.
+%
+Those parameters are the initial distance factor ($D_I$) and the final moment for diversity promotion ($D_F$).
+%
+While the former sets the initial level of diversity required by the replacement operator,
+the latter is the final moment where penalties based on diversity are performed.
+%
 
-Although the benefits of explicitly promoting the diversity in \DE{} are quite evident, those kind of strategies require the setting of two extra user-parameters.
+%Originally, the initial distance factor of the \DEEDM{} has been empirically tested with the promotion of diversity only until the $90\%$ of the total execution ($D_F=90\%$).
 %
-Those parameters are the initial distance factor ($D_I$) and final moment of diversity ($D_F$).
+%Those results showed that the performance of $D_I$ is quite robust in the sense that a large range of values provided good enough results.
 %
-While the former indicates the initial level of diversity required by the replacement operator.
+We will present a novel diversity-aware strategy, which is called \DEEDMB{}.
 %
-The later is the final moment among the execution in which the diversity is explicitly promoted.
+\DEEDMB{} is a simplification of \DEEDM{} in which the elite vectors are removed, just maintaining a multi-set of target and trial vector.
 %
-Originally, the initial distance factor of the \DEEDM{} has been empirically tested with the promotion of diversity only until the $90\%$ of the total execution ($D_F=90\%$).
+This allows to show that even quite simple variants of diversity-aware \DE{} excel on obtaining really promising results.
 %
-Those results showed that the performance of $D_I$ is quite robust in the sense that a large range of values provided good enough results.
-%
-In this work is presented \DEEDMB{}, which is a simplification of the \DEEDM{}.
-%
-In particular, the elite vectors are removed, leaving only the multi-set of target and trial vectors.
-%
-Finally, under the same experimental validation, a more complete analyzes of the diversity parameters ($D_I$ and $D_F$) is carried out.
-%
-This last analyzes explains the effect of promoting diversity to diferent levels in long-term executions.
-%
+Additionally, we develop a more complete analysis with the aim of better understanding the impact of $D_I$ and $D_F$ on the performance,
+which sheds some light on the reasons for the good performance of these kinds of algorithms in
+long-term executions.
 
 
 % \bibliographystyle{plain}
